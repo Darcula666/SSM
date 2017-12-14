@@ -5,8 +5,11 @@
 
 <generatorConfiguration>
     <context id="DB2Tables" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/mybatis"
+                        connectionURL="jdbc:mysql://localhost:3306/ssm"
                         userId="root"
                         password="root">
         </jdbcConnection>
@@ -28,7 +31,8 @@
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
         <!--指定要逆向分析哪些表-->
-        <table tableName="EMPLOYEE" domainObjectName="Employee" ></table>
+        <table tableName="t_emp" domainObjectName="Employee" ></table>
+        <table tableName="t_dept" domainObjectName="Department" ></table>
 
     </context>
 </generatorConfiguration>
