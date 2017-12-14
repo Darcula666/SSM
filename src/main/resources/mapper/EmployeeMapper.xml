@@ -166,7 +166,7 @@
             <include refid="Example_Where_Clause"/>
         </if>
     </select>
-    <select id="selectByExampleWithDept" resultType="com.gfdz.bean.Employee">
+    <select id="selectByExampleWithDept" resultMap="WithDeptResultMap">
         select
         <if test="distinct">
             distinct
@@ -180,7 +180,7 @@
             order by ${orderByClause}
         </if>
     </select>
-    <select id="selectByPrimaryKeyWithDept" resultType="com.gfdz.bean.Employee">
+    <select id="selectByPrimaryKeyWithDept" resultMap="WithDeptResultMap">
         select
         <include refid="WithDept_Column_List"/>
         from t_emp e LEFT JOIN t_dept d ON e.d_id=d.dept_id

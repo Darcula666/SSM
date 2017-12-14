@@ -9,12 +9,10 @@
     <typeAliases>
         <package name="com.gfdz.bean"/>
     </typeAliases>
-    <databaseIdProvider type="DB_VENDOR">
-        <property name="MySQL" value="mysql"/>
-        <property name="Oracle" value="oracle"/>
-        <property name="SQL Server" value="sqlserver"/>
-    </databaseIdProvider>
-    <mappers>
-        <mapper resource="mapper/EmployeeMapper.xml"/>
-    </mappers>
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!--分页参数合理化  -->
+            <property name="reasonable" value="true"/>
+        </plugin>
+    </plugins>
 </configuration>
